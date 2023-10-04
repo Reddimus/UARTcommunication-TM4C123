@@ -5,6 +5,8 @@
 
 This project provides a simple device driver for UART communication between boards running on the TM4C123GH6PM microcontroller. The project aims to facilitate board-to-board communication using UART1. The mini-project sends a signal from one board to another to turn on an LED.
 
+Note: src/inc folder contains the source code and header files used for the UART device driver. The folders are only used for organization purposes. The entire project can be found in the Keilv5_proj folder.
+
 ### Features
 
 - UART Initialization

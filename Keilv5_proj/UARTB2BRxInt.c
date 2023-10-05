@@ -99,7 +99,8 @@ void GPIOPortF_Handler(void) {
 void UART1_Handler(void) {
 	if(UART1_RIS_R&UART_RIS_RXRIS) {		// received one item
 		if ((UART1_FR_R&UART_FR_RXFE) == 0) {
-			LED = colors[UART1_DR_R & (COLORS_SIZE - 1)];	// read transmitted colors index then convert to color
+			colorsIdx = UART1_DR_R & (COLORS_SIZE - 1);		//	read transmitted state/colors index
+			LED = colors[colorsIdx];						// using current state/index change LED
 		}
 		UART1_ICR_R = UART_ICR_RXIC;		// acknowledge RX FIFO
 	}

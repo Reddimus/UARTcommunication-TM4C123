@@ -7,6 +7,10 @@ This project provides a simple device driver for UART communication between boar
 
 Note: src/inc folder contains the source code and header files used for the UART device driver. The folders are only used for organization purposes. The entire project can be found in the Keilv5_proj folder.
 
+V-0.2 updates: 
+- Added a list of colors in order: DARK, RED, BLUE, GREEN
+- Added a state/index variable to keep track of the current color across boards
+
 ### Features
 
 - UART Initialization
@@ -30,11 +34,10 @@ Note: src/inc folder contains the source code and header files used for the UART
 7. Turn on both boards.
 8. Connect PB1 and PB0 of board 1 to PB0 and PB1 of board 2 respectively for UART communication.
     - See schematic for more details.
-9. Press SW2 to turn on/off a RED LED on any of the boards.
-10. Press SW1 to turn transmit the state of the LED to the other board.
-11. The LED on the other board should turn on.
-12. Repeat steps 9-11 to turn on the LED on the other board.
-
+9. Press SW2 to switch between colors on board.
+10. Press SW1 to send the current color to the other board.
+    - current color/state will be synced across boards
+11. Repeat steps 9 and 10 to change the color of the LED on board 2.
 ### Files
 
 - `startup.s`: Startup code for Keil's uVision.

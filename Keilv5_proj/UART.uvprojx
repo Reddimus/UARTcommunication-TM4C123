@@ -411,29 +411,14 @@
               <FilePath>.\LEDSW.c</FilePath>
             </File>
             <File>
-              <FileName>LEDSW.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\LEDSW.h</FilePath>
-            </File>
-            <File>
               <FileName>UART0.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\UART0.c</FilePath>
             </File>
             <File>
-              <FileName>UART0.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\UART0.h</FilePath>
-            </File>
-            <File>
               <FileName>Display.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Display.c</FilePath>
-            </File>
-            <File>
-              <FileName>Display.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Display.h</FilePath>
             </File>
             <File>
               <FileName>Modes.c</FileName>
@@ -449,11 +434,6 @@
               <FileName>SystickPWM.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\SystickPWM.c</FilePath>
-            </File>
-            <File>
-              <FileName>SystickPWM.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\SystickPWM.h</FilePath>
             </File>
             <File>
               <FileName>Timer1A.c</FileName>

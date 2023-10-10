@@ -1,17 +1,18 @@
+#ifndef PLL_H
+#define PLL_H
 // PLL.h
 // Runs on LM4F120/TM4C123
 // A software function to change the bus frequency using the PLL.
-// Daniel Valvano
 // September 10, 2013
 
 /* This example accompanies the book
-   "Embedded Systems: Real Time Interfacing to Arm Cortex M Microcontrollers",
-   ISBN: 978-1463590154, Jonathan Valvano, copyright (c) 2013
-   Program 2.10, Figure 2.37
+	"Embedded Systems: Real Time Interfacing to Arm Cortex M Microcontrollers",
+	ISBN: 978-1463590154, Jonathan Valvano, copyright (c) 2013
+	Program 2.10, Figure 2.37
 
  Copyright 2013 by Jonathan W. Valvano, valvano@mail.utexas.edu
-    You may use, edit, run or distribute this file
-    as long as the above copyright notice remains
+	 You may use, edit, run or distribute this file
+	 as long as the above copyright notice remains
  THIS SOFTWARE IS PROVIDED "AS IS".  NO WARRANTIES, WHETHER EXPRESS, IMPLIED
  OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE APPLY TO THIS SOFTWARE.
@@ -24,6 +25,9 @@
 // The #define statement SYSDIV2 initializes
 // the PLL to the desired frequency.
 #define SYSDIV2 7
+
+#define BUS_MHZ_FREQ (400 / SYSDIV2 + 1)
+
 // bus frequency is 400MHz/(SYSDIV2+1) = 400MHz/(7+1) = 50 MHz
 
 // configure the system to get its clock from the PLL
@@ -161,3 +165,4 @@ SYSDIV2  Divisor  Clock (MHz)
  126      127     3.150
  127      128     3.125
 */
+#endif

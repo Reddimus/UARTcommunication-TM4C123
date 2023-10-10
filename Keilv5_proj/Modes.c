@@ -8,7 +8,7 @@
 
 void Mode1(void){
 	char choice;
-	do{
+	do {
 		Display_Mode1_Menu();
 		choice = UART0_InChar(); 
 	
@@ -17,7 +17,7 @@ void Mode1(void){
 		UART0_OutChar(choice);
 		OutCRLF0();  // Move to the next line
 		
-		switch(choice){
+		switch(choice) {
 
 			case '1':
 				UART0_OutString((uint8_t *)"Please select LED color: r(red), g(green), b(blue), p(purple), w(white), d(dark), c(cran)\n");
@@ -62,26 +62,28 @@ void Mode1(void){
 					}
 				break;					
 					
-				case '2':
-						// Prompt the user to enter a brightness level
-						UART0_OutString((uint8_t *)"Please enter a decimal number from 0 to 100 followed by a return: ");
-    
-						// Read the user input from UART as a number
-						uint32_t brightness = UART0_InUDec();  // Replace with the actual function to read a number from UART
-				if (brightness > 0 && brightness <100){
+			case '2':
+				// Prompt the user to enter a brightness level
+				UART0_OutString((uint8_t *)"Please enter a decimal number from 0 to 100 followed by a return: ");
+
+				// Read the user input from UART as a number
+				uint32_t brightness = UART0_InUDec();  // Replace with the actual function to read a number from UART
+					
+				if (brightness > 0 && brightness <100) {
 						Set_LED_Brightness(brightness);  // Set the LED brightness
 						// Send confirmation message back to the user through UART
 						UART0_OutString((uint8_t *)"Brightness set to ");
 						UART0_OutUDec(brightness);
 						UART0_OutString((uint8_t *)"%\n");
 				}
-					}
-		}	
+			// break;
+		}
+	}
 	while(choice!= '3');
 }
 
-void Mode2(void){
+void Mode2(void) {
 }
 
-void Mode3(void){
+void Mode3(void) {
 }

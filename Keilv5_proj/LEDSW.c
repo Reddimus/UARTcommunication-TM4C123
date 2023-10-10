@@ -10,17 +10,17 @@ volatile uint8_t colorsIdx;
 void LEDSW_Init(void) {
 	if ((SYSCTL_RCGC2_R&SYSCTL_RCGC2_GPIOF)==0) {
 		SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOF;	// Activate F clocks
-		while ((SYSCTL_RCGC2_R&SYSCTL_RCGC2_GPIOF)==0){};
+		while ((SYSCTL_RCGC2_R&SYSCTL_RCGC2_GPIOF)==0);
 	}
 	GPIO_PORTF_LOCK_R = GPIO_LOCK_KEY; 	// unlock GPIO Port F
 	//LEDS
-  GPIO_PORTF_AMSEL_R &= ~0x0E;      // 3) disable analog function
-  GPIO_PORTF_PCTL_R &= ~0x0000FFF0; // 4) GPIO clear bit PCTL  
-  GPIO_PORTF_DIR_R |= 0x0E;         // 6) PF1-PF3 output
-  GPIO_PORTF_AFSEL_R &= ~0x0E;      // 7) no alternate function     
-  GPIO_PORTF_DEN_R |= 0x0E;         // 8) enable digital pins PF3-PF1
-  //LED = Dark;                       // Turn off all LEDs.
-	
+	GPIO_PORTF_AMSEL_R &= ~0x0E;      // 3) disable analog function
+	GPIO_PORTF_PCTL_R &= ~0x0000FFF0; // 4) GPIO clear bit PCTL  
+	GPIO_PORTF_DIR_R |= 0x0E;         // 6) PF1-PF3 output
+	GPIO_PORTF_AFSEL_R &= ~0x0E;      // 7) no alternate function     
+	GPIO_PORTF_DEN_R |= 0x0E;         // 8) enable digital pins PF3-PF1
+	//LED = Dark;                       // Turn off all LEDs.
+
 	//Switches
 	GPIO_PORTF_LOCK_R = GPIO_LOCK_KEY;	// unlock GPIO Port F
 	GPIO_PORTF_CR_R |= 0x1F;			// allow changes to PF4-0
@@ -40,31 +40,31 @@ void LEDSW_Init(void) {
 }
 
 void Set_LED_Color(char color) {
-    switch(color) {
-			  case 'd':
-            colorsIdx = 0;
-            break;
-        case 'r':
-						colorsIdx = 1;
-            break;
-        case 'b':
-						colorsIdx = 2;
-            break;
-        case 'g':
-						colorsIdx = 3;
-            break;
-        case 'p':
-            colorsIdx = 4;
-            break;
-        case 'w':
-						colorsIdx = 5;
-            break;
-        case 'c':
-            colorsIdx = 6;
-            break;
-//        default:
-//            // Handle invalid color character if needed
-//            break;
-    }
-		GPIO_PORTF_DATA_R = colors[colorsIdx];
+	switch(color) {
+		case 'd':
+			colorsIdx = 0;
+			break;
+		case 'r':
+			colorsIdx = 1;
+			break;
+		case 'b':
+			colorsIdx = 2;
+			break;
+		case 'g':
+			colorsIdx = 3;
+			break;
+		case 'p':
+			colorsIdx = 4;
+			break;
+		case 'w':
+			colorsIdx = 5;
+			break;
+		case 'c':
+			colorsIdx = 6;
+			break;
+		// default:
+		// 	// Handle invalid color character if needed
+		// 	break;
+	}
+	GPIO_PORTF_DATA_R = colors[colorsIdx];
 }

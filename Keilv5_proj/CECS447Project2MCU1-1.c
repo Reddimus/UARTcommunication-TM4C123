@@ -18,26 +18,26 @@
 
 
 // TODO: define all colors in the color wheel
-const	uint8_t color_wheel[] = {RED, BLUE, GREEN, PURPLE, WHITE, DARK, CRAN};
+const uint8_t color_wheel[] = {RED, BLUE, GREEN, PURPLE, WHITE, DARK, CRAN};
 
 extern void EnableInterrupts(void);
 extern void WaitForInterrupt(void);
 extern void DisableInterrupts(void);
 
 
-int main(void){
+int main(void) {
 	DisableInterrupts();
-  PLL_Init();
+	PLL_Init();
 	LEDSW_Init();  // Initialize the onboard three LEDs and two push buttons
 	SysTick_Init();
-  UART0_Init();  // for PC<->MCU1
-//	UART2_Init();  // for MCU1<->MCU2
+	UART0_Init();  // for PC<->MCU1
+	//	UART2_Init();  // for MCU1<->MCU2
 	EnableInterrupts();
 
-  while(1){
+	while(1) {
 		// displays the main menu 
 		Display_Menu(); 
-		switch(UART0_InChar()){
+		switch(UART0_InChar()) {
 			case '1':
 				Mode1();
 				break;
@@ -51,5 +51,5 @@ int main(void){
 				break; 
 		}
 		OutCRLF0();
-  }
+	}
 }

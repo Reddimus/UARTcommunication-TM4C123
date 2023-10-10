@@ -391,14 +391,74 @@
               <FilePath>.\startup.s</FilePath>
             </File>
             <File>
+              <FileName>PLL.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\PLL.c</FilePath>
+            </File>
+            <File>
               <FileName>UART.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\UART.c</FilePath>
             </File>
             <File>
-              <FileName>UARTB2BRxInt.c</FileName>
+              <FileName>CECS447Project2MCU1-1.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\UARTB2BRxInt.c</FilePath>
+              <FilePath>.\CECS447Project2MCU1-1.c</FilePath>
+            </File>
+            <File>
+              <FileName>LEDSW.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\LEDSW.c</FilePath>
+            </File>
+            <File>
+              <FileName>LEDSW.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\LEDSW.h</FilePath>
+            </File>
+            <File>
+              <FileName>UART0.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UART0.c</FilePath>
+            </File>
+            <File>
+              <FileName>UART0.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\UART0.h</FilePath>
+            </File>
+            <File>
+              <FileName>Display.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Display.c</FilePath>
+            </File>
+            <File>
+              <FileName>Display.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Display.h</FilePath>
+            </File>
+            <File>
+              <FileName>Modes.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Modes.c</FilePath>
+            </File>
+            <File>
+              <FileName>Modes.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Modes.h</FilePath>
+            </File>
+            <File>
+              <FileName>SystickPWM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\SystickPWM.c</FilePath>
+            </File>
+            <File>
+              <FileName>SystickPWM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\SystickPWM.h</FilePath>
+            </File>
+            <File>
+              <FileName>Timer1A.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Timer1A.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -425,7 +485,7 @@
   <LayerInfo>
     <Layers>
       <Layer>
-        <LayName>&lt;Project Info&gt;</LayName>
+        <LayName>UART</LayName>
         <LayTarg>0</LayTarg>
         <LayPrjMark>1</LayPrjMark>
       </Layer>

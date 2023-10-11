@@ -43,3 +43,23 @@ V-1.1 update: The project now has a terminal interface that allows the user to s
 | PF1  | Onboard LED 1 (Red)       |
 | PF0  | Onboard Switch 2          |
 
+### GPIO_PORTA Table
+
+| Pin  | Usage                     |
+|:----:|:-------------------------:|
+| PA1  | UART0 Tx (Transmit)       |
+| PA0  | UART0 Rx (Receive)        |
+
+### GPIO_PORTD Table
+
+| Pin  | Usage                     |
+|:----:|:-------------------------:|
+| PD7  | UART2 Tx (Transmit)       |
+| PA6  | UART2 Rx (Receive)        |
+
+### GPIO_PORTC Table
+
+| Pin  | Usage                     |
+|:----:|:-------------------------:|
+| PC7  | UART3 Tx (Transmit)       |
+| PC6  | UART3 Rx (Receive)        |

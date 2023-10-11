@@ -5,7 +5,7 @@
 
 #define NVIC_EN0_UART0 0x20     // UART0 IRQ number 5
 
-void UART0_Init(void){
+void UART0_Init(void) {
 	SYSCTL_RCGC1_R |= SYSCTL_RCGC1_UART0;	// activate UART0
 	SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOA;	// activate port A
 	UART0_CTL_R = 0;						// disable UART
@@ -64,21 +64,21 @@ void UART0_OutString(uint8_t *pt) {
 // Output: 32-bit unsigned number
 // If you enter a number above 4294967295, it will return an incorrect value
 // Backspace will remove last digit typed
-uint32_t UART0_InUDec(void){
+uint32_t UART0_InUDec(void) {
 	uint32_t number=0, length=0;
 	char character;
 	character = UART0_InChar();
 	while(character != CR) { // accepts until <enter> is typed
 		// The next line checks that the input is a digit, 0-9.
 		// If the character is not 0-9, it is ignored and not echoed
-		if((character>='0') && (character<='9')) {
+		if('0' <= character && character <= '9') {
 			number = 10*number+(character-'0');   // this line overflows if above 4294967295
 			length++;
 			UART0_OutChar(character);
 		}
 		// If the input is a backspace, then the return number is
 		// changed and a backspace is outputted to the screen
-		else if((character==BS) && length) {
+		else if(character==BS && length) {
 			number /= 10;
 			length--;
 			UART0_OutChar(character);

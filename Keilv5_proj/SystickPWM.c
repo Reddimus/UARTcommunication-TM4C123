@@ -15,7 +15,6 @@ volatile uint32_t high;
 volatile uint32_t low;
 
 void SysTick_Init(void){
-	colorsIdx = 0;
 	NVIC_ST_CTRL_R = 0;           			// disable SysTick during setup
 	NVIC_ST_RELOAD_R = HALF_DUTY - 1;     // reload value for 50% duty cycle
 	NVIC_ST_CURRENT_R = 0;        			// any write to current clears it
@@ -27,12 +26,12 @@ void SysTick_Init(void){
 void SysTick_Handler(void) {
 	
 	//NVIC_ST_CTRL_R &= ~NVIC_ST_CTRL_ENABLE; //clear systick	
-	if(GPIO_PORTF_DATA_R & 0x0E) {
-		GPIO_PORTF_DATA_R &= ~0x0E; //controls the brightness
+	if(GPIO_PORTF_DATA_R & RGB) {
+		GPIO_PORTF_DATA_R &= ~RGB; //controls the brightness
 		NVIC_ST_RELOAD_R = low - 1;  // Number of counts to wait pf3 pf2 pf1 pf0 = 1110
 	} 
 	else {
-		GPIO_PORTF_DATA_R |= colors[colorsIdx];
+		GPIO_PORTF_DATA_R |= getLEDColorPortF();
 		NVIC_ST_RELOAD_R = high - 1;
 	}
 	NVIC_ST_CURRENT_R = 0;  // Any value written to CURRENT clears

@@ -63,3 +63,90 @@ V-1.1 update: The project now has a terminal interface that allows the user to s
 |:----:|:-------------------------:|
 | PC7  | UART3 Tx (Transmit)       |
 | PC6  | UART3 Rx (Receive)        |
+
+
+# Mode 1: PC ↔ MCU1 LED Control
+
+In Mode 1, only MCU1 and PC serial terminal 1 partake in the communication process. 
+
+## Baud Rate Specifications:
+- Communication between MCU1 and PC serial terminal 1: `57600`
+
+## System State:
+- MCU2 remains in an idle state.
+- PC serial terminal 2 consistently displays its starting message.
+- PC serial terminal 1 exhibits the "Mode 1 menu".
+
+## Menu Details:
+
+### Option 1:
+1. Once option `1` is chosen from the Mode 1 menu, MCU1 begins communication by prompting PC serial terminal 1 to choose an LED color for display on MCU_1.
+   - Available color choices:
+     - `r`: Red
+     - `g`: Green
+     - `b`: Blue
+     - `p`: Purple
+     - `y`: Yellow
+     - `w`: White
+     - `d`: Dark
+2. Upon user input of a color letter (followed by a carriage return):
+   - MCU1 updates its LEDs to the specified color.
+   - A confirmation message returns to PC serial terminal 1. 
+     - For instance, if `r` is selected, the message will be: 
+       ```
+       Red LED is on
+       ```
+   - The Mode 1 menu reappears on PC serial terminal 1.
+
+### Option 2:
+1. On selection of option `2` from the Mode 1 menu, a new prompt appears on PC serial terminal 1 asking for a decimal number.
+2. This entered number determines the duty cycle, ranging from `0%` to `100%`.
+3. A PWM (Pulse-Width Modulation) signal, based on the duty cycle, is generated. This signal controls the brightness of the current LED(s).
+4. A confirmation message is then sent to PC serial terminal 1, after which the Mode 1 menu re-emerges.
+
+### Option 3:
+1. By selecting option `3` from the Mode 1 menu, the system concludes Mode 1 operations.
+2. PC serial terminal 1 then displays its main menu.
+
+# Mode 2 Communication System
+
+In Mode 2, all four members of the communication system are actively involved. 
+
+## Baud Rate Specifications:
+- PC serial terminal 1 ↔ MCU1, MCU2 ↔ PC serial terminal 2: `57600`
+- MCU1 ↔ MCU2: `38400`
+
+## Communication Ports:
+- MCU1 uses `UART2` to communicate with MCU2.
+- MCU2 uses `UART3` to communicate with MCU1.
+
+## Initiation:
+MCU1 will initiate the communication. To terminate the mode at any given time, a user can input the symbol `^` at PC serial terminal 1. MCU1's UART0 RX interrupt will capture this termination request.
+
+## Operation:
+
+### On Entering Mode 2:
+Both PC terminals will display messages, setting the initial context for the user.
+
+### Step 1:
+- Use `SW2` on MCU1 to cycle through colors on a color wheel in a round robin fashion.
+- On every color change, PC serial terminal 1 should update to show:
+
+### Step 2:
+- Once a color is selected on MCU1 and sent to MCU2 by pressing `SW1`, MCU1 enters an idle state. It awaits a color code from MCU2.
+- Both PC serial terminals will display updated messages to reflect this change.
+
+### Step 3:
+- For MCU2, every LED color change should update PC serial terminal 2 to display the current color.
+
+### Step 4:
+- After MCU2 selects its color and sends it to MCU1 via the `SW1` button, MCU2 then goes idle, awaiting a color code from MCU1.
+
+These steps (1 to 4) are repeated continuously during the operation of Mode 2. 
+
+To exit Mode 2, sending a `^` symbol from PC serial terminal 1 to MCU1 will suffice. Remember that MCU1 UART0 RX interrupt is required to detect this termination request.
+
+### Post Termination:
+After Mode 2 concludes:
+1. All LEDs on both MCUs are turned off.
+2. The two PC serial terminals return to the main menu.

@@ -9,7 +9,7 @@
 #define SW1 0x10 //left switch
 #define SW2 0x01 //right switch
 
-#define COLORS_SIZE 7
+#define COLORS_SIZE 8
 
 #define MAX_ASCII 255
 

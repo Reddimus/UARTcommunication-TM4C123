@@ -14,11 +14,12 @@ typedef struct {
 colors_properties colors[COLORS_SIZE] = {
 	{0x00, (uint8_t *) "Off"},
 	{0x02, (uint8_t *) "Red"},
-	{0x04, (uint8_t *) "Blue"},
 	{0x08, (uint8_t *) "Green"},
+	{0x04, (uint8_t *) "Blue"},
+	{0x0A, (uint8_t *) "Yellow"},
+	{0x0C, (uint8_t *) "Cran"},
 	{0x06, (uint8_t *) "Purple"},
-	{0x0E, (uint8_t *) "White"},
-	{0x0C, (uint8_t *) "Cran"}
+	{0x0E, (uint8_t *) "White"}
 };
 
 char colorsChoice[MAX_ASCII];
@@ -32,11 +33,12 @@ void Colors_Init(void) {
 	}
 	colorsChoice['d'] = 0;
 	colorsChoice['r'] = 1;
-	colorsChoice['b'] = 2;
-	colorsChoice['g'] = 3;
-	colorsChoice['p'] = 4;
-	colorsChoice['w'] = 5;
-	colorsChoice['c'] = 6;
+	colorsChoice['g'] = 2;
+	colorsChoice['b'] = 3;
+	colorsChoice['y'] = 4;
+	colorsChoice['c'] = 5;
+	colorsChoice['p'] = 6;
+	colorsChoice['w'] = 7;
 }
 
 void LEDSW_Init(void) {

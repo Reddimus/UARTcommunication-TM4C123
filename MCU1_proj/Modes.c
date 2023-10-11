@@ -20,7 +20,7 @@ void Mode1(void){
 		switch(choice) {
 
 			case '1':
-				UART0_OutString((uint8_t *)"Please select LED color: r(red), g(green), b(blue), p(purple), w(white), d(dark), c(cran)\n");
+				UART0_OutString((uint8_t *)"Please select LED color: d(dark), r(red), g(green), b(blue), y(yellow), c(cran), p(purple), w(white)\n");
 				// Read the character entered by the user
 				// Send a confirmation message back to the user based on the selected color
 				char colorChar = tolower(UART0_InChar());

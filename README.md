@@ -20,6 +20,7 @@ V-1.1 update: The project now has a terminal interface that allows the user to s
 
 - TM4C123GH6PM microcontroller
 - Keil uVision IDE
+- Tera Term VT
 
 ### How to Run
 
@@ -27,7 +28,7 @@ V-1.1 update: The project now has a terminal interface that allows the user to s
 2. Open the Keilv5_proj folder project in Keil uVision 5.
 3. Build the project.
 4. Turn on TM4C123GH6PM board 1 and upload the compiled code to your TM4C123GH6PM board 1.
-5. Communicate with the board using the tera term interface with BAUD rate 115200.
+5. Communicate with the board using a tera terminal like interface with BAUD rate 57600.
     - Select Mode 1 to change the color of the onboard LED and brightness of the onboard LED.
 
 ## Hardware and GPIO Ports

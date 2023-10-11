@@ -9,6 +9,8 @@ Note: src/inc folder contains the source code and header files used for the UART
 
 V-1.1 update: The project now has a terminal interface that allows the user to send and receive data from the board. The project only has mode 1 that allows the user to change the color of the onboard LED and the brightness of the onboard LED.
 
+V-1.2 update: The project now cycles through colors in a round robin fashion order when Switch 2 is pressed and relays each change to PC serial terminal 1. When a color is picked and shared with MCU2 via SW1, both MCU 1 will enter an idle state, awaiting color codes from MCU 2 and vice versa. This exchange between MCUs is a continuous process. To terminate Mode 2, send a ^ symbol from PC serial terminal 1.
+
 ### Features
 
 - UART Initialization

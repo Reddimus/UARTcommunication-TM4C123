@@ -2,6 +2,7 @@
 #include "stdint.h"
 #include "LEDSW.h"
 #include "UART0.h"
+#include <ctype.h>
 
 // Constants
 #define NVIC_EN0_PORTF 0x40000000  // enable PORTF edge interrupt
@@ -31,6 +32,7 @@ void Colors_Init(void) {
 	for (uint8_t asciiChar = 0; asciiChar < MAX_ASCII; asciiChar++) {
 		colorsChoice[asciiChar] = -1;
 	}
+	colorsChoice['o'] = 0;
 	colorsChoice['d'] = 0;
 	colorsChoice['r'] = 1;
 	colorsChoice['g'] = 2;
@@ -98,5 +100,17 @@ void setLEDColor(char color) {
 	}
 	else {
 		UART0_OutString((uint8_t *)"\r\nInvalid color choice\n");
+	}
+}
+
+void GPIOPortF_Handler(void) {
+	if (GPIO_PORTF_RIS_R&SW1) {	// SW1 touch
+		GPIO_PORTF_ICR_R = SW1;	// acknowledge flag4
+		// send Tx message
+	}
+	if (GPIO_PORTF_RIS_R&SW2) {	// SW2 touch
+		GPIO_PORTF_ICR_R = SW2;	// acknowledge flag0
+		colorsIdx = (colorsIdx + 1) % COLORS_SIZE;	// cycle through colors
+		setLEDColor(tolower(colors[colorsIdx].name[0]));
 	}
 }

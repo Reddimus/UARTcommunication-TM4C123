@@ -3,13 +3,11 @@
 
 ## Overview
 
-This project provides a simple device driver for UART communication between boards running on the TM4C123GH6PM microcontroller. The project aims to facilitate board-to-board communication using UART1. The mini-project sends a signal from one board to another to turn on an LED.
+This project provides a simple device driver for UART communication between boards running on the TM4C123GH6PM microcontroller. The project aims to facilitate computer-to-board communication using UART. The mini-project has a terminal interface that allows the user to send and receive data from the board. The project only has mode 1 that allows
 
 Note: src/inc folder contains the source code and header files used for the UART device driver. The folders are only used for organization purposes. The entire project can be found in the Keilv5_proj folder.
 
-V-0.2 updates: 
-- Added a list of colors in order: DARK, RED, BLUE, GREEN
-- Added a state/index variable to keep track of the current color across boards
+V-1.1 update: The project now has a terminal interface that allows the user to send and receive data from the board. The project only has mode 1 that allows the user to change the color of the onboard LED and the brightness of the onboard LED.
 
 ### Features
 
@@ -29,22 +27,8 @@ V-0.2 updates:
 2. Open the Keilv5_proj folder project in Keil uVision 5.
 3. Build the project.
 4. Turn on TM4C123GH6PM board 1 and upload the compiled code to your TM4C123GH6PM board 1.
-5. Turn off TM4C123GH6PM board 1.
-6. Turn on TM4C123GH6PM board 2 and upload the compiled code to your TM4C123GH6PM board 2.
-7. Turn on both boards.
-8. Connect PB1 and PB0 of board 1 to PB0 and PB1 of board 2 respectively for UART communication.
-    - See schematic for more details.
-9. Press SW2 to switch between colors on board.
-10. Press SW1 to send the current color to the other board.
-    - current color/state will be synced across boards
-11. Repeat steps 9 and 10 to change the color of the LED on board 2.
-### Files
-
-- `startup.s`: Startup code for Keil's uVision.
-- `tm4c123gh6pm.h`: Register definitions for TM4C123GH6PM.
-- `UART.c`: Device driver for UART.
-- `UART.h`: Header file for UART device driver.
-- `UARTB2BRxInt.c`: Example program for board-to-board communication.
+5. Communicate with the board using the tera term interface with BAUD rate 115200.
+    - Select Mode 1 to change the color of the onboard LED and brightness of the onboard LED.
 
 ## Hardware and GPIO Ports
 
@@ -58,8 +42,3 @@ V-0.2 updates:
 | PF1  | Onboard LED 1 (Red)       |
 | PF0  | Onboard Switch 2          |
 
-### GPIO_PORTB Table
-| Pin  | Usage                     |
-|:----:|:-------------------------:|
-| PB1  | UART1 Rx (Receive)        |
-| PB0  | UART1 Tx (Transmit)       |

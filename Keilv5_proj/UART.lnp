@@ -1,7 +1,6 @@
 --cpu=Cortex-M4 --fpu=SoftVFP
 ".\startup.o"
 ".\pll.o"
-".\uart.o"
 ".\cecs447project2mcu1-1.o"
 ".\ledsw.o"
 ".\uart0.o"

@@ -1,15 +1,17 @@
+#ifndef UART0_H
+#define UART0_H
+
 #include <stdint.h>
 #include <stdbool.h>  // for C boolean data type
 
 // standard ASCII symbols
-#define CR   0x0D
-#define LF   0x0A
-#define BS   0x08
-#define ESC  0x1B
-#define SP   0x20
-#define DEL  0x7F
-#define NULL 0
-
+#define CR		0x0D
+#define LF		0x0A
+#define BS		0x08
+#define ESC		0x1B
+#define SP		0x20
+#define DEL		0x7F
+#define NULL	0
 
 //------------UART_Init------------
 // Initialize the UART for 115,200 baud rate (assuming 50 MHz clock),
@@ -58,3 +60,5 @@ uint32_t UART0_InUDec(void);
 // Output: none
 // Variable format 1-10 digits with no space before or after
 void UART0_OutUDec(uint32_t n);
+
+#endif

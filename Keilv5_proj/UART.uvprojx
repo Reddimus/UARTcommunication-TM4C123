@@ -331,7 +331,7 @@
             <uGnu>0</uGnu>
             <useXO>0</useXO>
             <v6Lang>3</v6Lang>
-            <v6LangP>5</v6LangP>
+            <v6LangP>8</v6LangP>
             <vShortEn>1</vShortEn>
             <vShortWch>1</vShortWch>
             <v6Lto>0</v6Lto>
@@ -396,11 +396,6 @@
               <FilePath>.\PLL.c</FilePath>
             </File>
             <File>
-              <FileName>UART.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\UART.c</FilePath>
-            </File>
-            <File>
               <FileName>CECS447Project2MCU1-1.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\CECS447Project2MCU1-1.c</FilePath>
@@ -411,19 +406,9 @@
               <FilePath>.\LEDSW.c</FilePath>
             </File>
             <File>
-              <FileName>LEDSW.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\LEDSW.h</FilePath>
-            </File>
-            <File>
               <FileName>UART0.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\UART0.c</FilePath>
-            </File>
-            <File>
-              <FileName>UART0.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\UART0.h</FilePath>
             </File>
             <File>
               <FileName>Display.c</FileName>
@@ -431,34 +416,19 @@
               <FilePath>.\Display.c</FilePath>
             </File>
             <File>
-              <FileName>Display.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Display.h</FilePath>
-            </File>
-            <File>
-              <FileName>Modes.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Modes.c</FilePath>
-            </File>
-            <File>
-              <FileName>Modes.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Modes.h</FilePath>
-            </File>
-            <File>
               <FileName>SystickPWM.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\SystickPWM.c</FilePath>
             </File>
             <File>
-              <FileName>SystickPWM.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\SystickPWM.h</FilePath>
-            </File>
-            <File>
               <FileName>Timer1A.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Timer1A.c</FilePath>
+            </File>
+            <File>
+              <FileName>Modes.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Modes.c</FilePath>
             </File>
           </Files>
         </Group>

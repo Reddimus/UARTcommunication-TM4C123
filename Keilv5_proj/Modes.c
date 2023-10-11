@@ -4,6 +4,7 @@
 #include "Display.h"
 #include "LEDSW.h"
 #include "SystickPWM.h"
+#include <ctype.h>
 
 
 void Mode1(void){
@@ -23,43 +24,10 @@ void Mode1(void){
 				UART0_OutString((uint8_t *)"Please select LED color: r(red), g(green), b(blue), p(purple), w(white), d(dark), c(cran)\n");
 				// Read the character entered by the user
 				// Send a confirmation message back to the user based on the selected color
-				char color_char = UART0_InChar();
+				char colorChar = tolower(UART0_InChar());
 				// Call the function to set the LED color
-				Set_LED_Color(color_char);
+				setLEDColor(colorChar);
 				Set_LED_Brightness(99);
-				switch(color_char){
-					case 'r':
-						UART0_OutString((uint8_t *)"\r\nRed LED is on\n");
-					break;
-					
-					case 'g':
-						UART0_OutString((uint8_t *)"\r\nGreen LED is on\n");
-					break;
-					
-					case 'b':
-						UART0_OutString((uint8_t *)"\r\nBlue LED is on\n");
-					break;
-					
-					case 'p':
-						UART0_OutString((uint8_t *)"\r\nPurple LED is on\n");
-					break;
-					
-					case 'w':
-						UART0_OutString((uint8_t *)"\r\nWhite LED is on\n");
-					break;
-			
-					case 'd':
-						UART0_OutString((uint8_t *)"\r\nLED is off\n");
-					break;
-					
-					case 'c':
-						UART0_OutString((uint8_t *)"\r\nCranberry LED is on\n");
-					break;
-					
-					default:
-						UART0_OutString((uint8_t *)"\r\nInvalid color selection!\n");
-					break;
-					}
 				break;					
 					
 			case '2':
@@ -70,13 +38,13 @@ void Mode1(void){
 				uint32_t brightness = UART0_InUDec();  // Replace with the actual function to read a number from UART
 					
 				if (brightness > 0 && brightness <100) {
-						Set_LED_Brightness(brightness);  // Set the LED brightness
-						// Send confirmation message back to the user through UART
-						UART0_OutString((uint8_t *)"Brightness set to ");
-						UART0_OutUDec(brightness);
-						UART0_OutString((uint8_t *)"%\n");
+					Set_LED_Brightness(brightness);  // Set the LED brightness
+					// Send confirmation message back to the user through UART
+					UART0_OutString((uint8_t *)"Brightness set to ");
+					UART0_OutUDec(brightness);
+					UART0_OutString((uint8_t *)"%\n");
 				}
-			// break;
+				break;
 		}
 	}
 	while(choice!= '3');

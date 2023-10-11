@@ -13,7 +13,6 @@
 #define DEL		0x7F
 #define NULL	0
 
-
 //------------UART_Init------------
 // Initialize the UART for 115,200 baud rate (assuming 50 MHz clock),
 // 8 bit word length, no parity bits, one stop bit, FIFOs enabled
@@ -62,4 +61,4 @@ uint32_t UART0_InUDec(void);
 // Variable format 1-10 digits with no space before or after
 void UART0_OutUDec(uint32_t n);
 
-#endif UART0_H
+#endif

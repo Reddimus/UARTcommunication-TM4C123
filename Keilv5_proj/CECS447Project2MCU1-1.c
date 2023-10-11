@@ -16,10 +16,6 @@
 
 #define MAX_STR_LEN 20
 
-
-// TODO: define all colors in the color wheel
-const uint8_t color_wheel[] = {RED, BLUE, GREEN, PURPLE, WHITE, DARK, CRAN};
-
 extern void EnableInterrupts(void);
 extern void WaitForInterrupt(void);
 extern void DisableInterrupts(void);

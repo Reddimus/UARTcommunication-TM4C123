@@ -6,7 +6,6 @@
 #include "SystickPWM.h"
 #include <ctype.h>
 
-
 void Mode1(void){
 	char choice;
 	do {
@@ -27,7 +26,6 @@ void Mode1(void){
 				char colorChar = tolower(UART0_InChar());
 				// Call the function to set the LED color
 				setLEDColor(colorChar);
-				Set_LED_Brightness(99);
 				break;					
 					
 			case '2':

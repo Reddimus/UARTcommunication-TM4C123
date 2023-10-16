@@ -30,7 +30,7 @@ V-1.2 update: The project now cycles through colors in a round robin fashion ord
 2. Open the Keilv5_proj folder project in Keil uVision 5.
 3. Build the project.
 4. Turn on TM4C123GH6PM board 1 and upload the compiled code to your TM4C123GH6PM board 1.
-5. Communicate with the board using a tera terminal like interface with BAUD rate 57600.
+5. Communicate with the board using a tera term interface with BAUD rate 57600.
     - Select Mode 1 to change the color of the onboard LED and brightness of the onboard LED.
 
 ## Hardware and GPIO Ports
@@ -45,19 +45,12 @@ V-1.2 update: The project now cycles through colors in a round robin fashion ord
 | PF1  | Onboard LED 1 (Red)       |
 | PF0  | Onboard Switch 2          |
 
-### GPIO_PORTA Table
-
-| Pin  | Usage                     |
-|:----:|:-------------------------:|
-| PA1  | UART0 Tx (Transmit)       |
-| PA0  | UART0 Rx (Receive)        |
-
 ### GPIO_PORTD Table
 
 | Pin  | Usage                     |
 |:----:|:-------------------------:|
 | PD7  | UART2 Tx (Transmit)       |
-| PA6  | UART2 Rx (Receive)        |
+| PD6  | UART2 Rx (Receive)        |
 
 ### GPIO_PORTC Table
 
